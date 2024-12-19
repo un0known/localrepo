@@ -5,10 +5,10 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [jokes, setJokes] = useState(jokes)
+  const [jokes, setJokes] = useState([])
 
   useEffect(() =>{
-    axios.get('http://localhost:3000/jokes')
+    axios.get('/api/jokes')
     .then((response)=>{
       setJokes(response.data)
     }).catch((error)=>{
